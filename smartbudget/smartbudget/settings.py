@@ -41,9 +41,15 @@ INSTALLED_APPS = (
     'registration',
     'finance',
     'master',
+    'opbeat.contrib.django',
 )
-
+OPBEAT = {
+    "ORGANIZATION_ID": "d33ebe2c45e04fb0b6e5e2871b0dae52",
+    "APP_ID": "942a2a4bb7",
+    "SECRET_TOKEN": "16982ae1e60b559fce5a308a3823c3a5fd92f3e8"
+}
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
